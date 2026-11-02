@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maintenance D-cartes et dmarche.org — deux formules · Furst Ops</title>
+<meta name="description" content="Proposition de maintenance de la plateforme D-cartes et dmarche.org après la mise en ligne : deux formules, présentées au COPIL 7 de l'ADAL (5 novembre 2026).">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    --navy:#0b1220; --navy-2:#111a2e; --orange:#ff7a00; --orange-soft:#fff1e3;
+    --blue:#347485; --blue-soft:#e6f3f7;
+    --ink:#1a2233; --muted:#5b6577; --line:#e6e9ef; --bg:#f6f7f9; --card:#fff;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+  h2{font-size:22px;margin:0 0 6px;line-height:1.25}
+  .intro{color:var(--muted);margin:0 0 20px}
+  section{padding:34px 0 6px}
+
+  /* En-tête */
+  header{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:36px 0 34px;border-bottom:4px solid var(--orange)}
+  .brand{font-weight:800;font-size:20px;letter-spacing:.4px}
+  .brand span{color:var(--orange)}
+  h1{font-size:30px;line-height:1.2;margin:18px 0 8px}
+  .sub{color:#c7cfdd;margin:0;max-width:640px}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600}
+
+  /* Les deux formules */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .formule{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;display:flex;flex-direction:column}
+  .formule.reco{border:2px solid var(--orange);box-shadow:0 6px 22px rgba(255,122,0,.12)}
+  .badge{position:absolute;top:-12px;left:20px;background:var(--orange);color:#1a1200;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px;letter-spacing:.3px}
+  .num{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .formule h3{font-size:22px;margin:4px 0 2px}
+  .idee{color:var(--muted);margin:0 0 14px;font-size:15px}
+  .prix{display:flex;align-items:baseline;gap:6px;margin:4px 0 2px}
+  .prix b{font-size:40px;line-height:1}
+  .prix span{color:var(--muted);font-weight:600}
+  .an{color:var(--muted);font-size:14px;margin-bottom:14px}
+  .lignes{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+  .lignes li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .lignes li:last-child{border-bottom:0}
+  .ic{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:14px;font-weight:800}
+  .ic.ok{background:var(--blue-soft);color:var(--blue)}
+  .ic.var{background:var(--orange-soft);color:#b35400}
+  .lignes small{display:block;color:var(--muted);font-size:13px}
+  .pour{margin-top:auto;padding-top:14px;font-size:14px;color:var(--ink)}
+  .pour b{color:var(--blue)}
+
+  /* Graphique : coût mensuel selon le support */
+  .graph{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .barres{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:230px;margin-top:10px;padding:0 4px;border-bottom:2px solid var(--line)}
+  .col{display:flex;gap:6px;align-items:flex-end;justify-content:center;height:100%}
+  .b{width:38%;max-width:48px;border-radius:8px 8px 0 0;position:relative}
+  .b.f1{background:var(--orange)}
+  .b.f2{background:var(--blue)}
+  .b i{position:absolute;top:-21px;left:50%;transform:translateX(-50%);font-style:normal;font-size:12.5px;font-weight:700;white-space:nowrap;color:var(--ink)}
+  .axes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:8px 4px 0;text-align:center;font-size:13.5px;color:var(--muted)}
+  .legende{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;margin-top:14px}
+  .legende span{display:inline-flex;align-items:center;gap:6px}
+  .legende span::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+  .cle{margin-top:14px;background:var(--blue-soft);border-radius:12px;padding:12px 14px;font-size:15px}
+
+  /* Socle : rythme */
+  .rythme{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .r{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .r .q{font-size:13px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.8px}
+  .r ul{margin:8px 0 0;padding-left:18px;font-size:14.5px}
+  .r ul li{margin:3px 0}
+  .auto{display:inline-block;font-size:11.5px;font-weight:700;background:var(--blue-soft);color:var(--blue);border-radius:6px;padding:1px 6px;margin-left:4px}
+
+  /* Qui fait quoi */
+  .qui{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .boite{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .boite h3{margin:0 0 8px;font-size:17px}
+  .boite ul{margin:0;padding-left:18px;font-size:15px}
+  .boite.adal{border-top:4px solid #4eadc7}
+  .boite.fo{border-top:4px solid var(--orange)}
+
+  /* Options */
+  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .opt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .opt h3{font-size:16px;margin:0 0 4px}
+  .opt p{margin:0;font-size:14.5px;color:var(--muted)}
+  .opt .m{display:block;margin-top:10px;font-weight:800;color:var(--ink)}
+  .garantie{margin-top:14px;background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+  .garantie b{font-size:28px;color:var(--orange);line-height:1;white-space:nowrap}
+
+  /* Conditions et décision */
+  .conds{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:14.5px}
+  .c b{display:block;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+  .decide{background:var(--card);border:2px dashed var(--orange);border-radius:14px;padding:18px;margin-top:14px}
+  .decide h3{margin:0 0 8px;font-size:17px}
+  .decide ol{margin:0;padding-left:20px}
+  footer{color:var(--muted);font-size:13px;padding:30px 0 40px;text-align:center}
+
+  @media (max-width:760px){
+    h1{font-size:25px}
+    .duo,.qui{grid-template-columns:1fr}
+    .rythme,.conds{grid-template-columns:1fr 1fr}
+    .options{grid-template-columns:1fr}
+    .formule.reco{margin-top:8px}
+  }
+  @media (max-width:420px){
+    .rythme,.conds{grid-template-columns:1fr}
+    .barres{gap:6px}.axes{gap:6px;font-size:12px}
+    .b i{font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Furst<span>-</span>Ops</div>
+    <h1>Maintenir D-cartes et dmarche.org<br>après la mise en ligne</h1>
+    <p class="sub">Deux formules au choix de l'ADAL, à partir du 13 décembre 2026. Le même socle technique ; ce qui change, c'est la façon de payer le support.</p>
+    <div class="pills">
+      <span class="pill">COPIL 7 · 5 novembre 2026</span>
+      <span class="pill">12 mois renouvelables</span>
+      <span class="pill">TVA non applicable (art. 293 B du CGI)</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Les deux formules</h2>
+    <p class="intro">Formule 1 : un socle mensuel, et le support facturé à la demi-journée quand il sert. Formule 2 : un forfait fixe, avec une demi-journée de support comprise chaque mois.</p>
+    <div class="duo">
+      <article class="formule reco">
+        <span class="badge">Recommandée la 1re année</span>
+        <div class="num">Formule 1</div>
+        <h3>Socle + régie</h3>
+        <p class="idee">On paie le socle, et le support seulement s'il sert.</p>
+        <div class="prix"><b>375 €</b><span>/ mois</span></div>
+        <div class="an">4 500 € par an</div>
+        <ul class="lignes">
+          <li><span class="ic ok">✓</span><span>Socle technique complet<small>sauvegardes, mises à jour, contrôles, tests de restauration</small></span></li>
+          <li><span class="ic var">€</span><span>Support à la demande<small>187,50 € la demi-journée, détail joint à la facture</small></span></li>
+          <li><span class="ic ok">⏱</span><span>Panne bloquante prise en charge<small>sous 1 jour ouvré</small></span></li>
+          <li><span class="ic var">€</span><span>Évolutions sur devis<small>375 € par jour</small></span></li>
+        </ul>
+        <p class="pour">Budget <b>variable</b>. Un crédit prépayé est possible pour le lisser (par exemple 5 jours pour 1 875 €).</p>
+      </article>
+
+      <article class="formule">
+        <div class="num">Formule 2</div>
+        <h3>Forfait tout compris</h3>
+        <p class="idee">Un montant fixe, le support courant inclus.</p>
+        <div class="prix"><b>560 €</b><span>/ mois</span></div>
+        <div class="an">6 720 € par an</div>
+        <ul class="lignes">
+          <li><span class="ic ok">✓</span><span>Socle technique complet<small>identique à la formule 1</small></span></li>
+          <li><span class="ic ok">✓</span><span>½ journée de support incluse chaque mois<small>incident, compte bloqué, anomalie signalée par l'ADAL</small></span></li>
+          <li><span class="ic ok">⏱</span><span>Panne bloquante prise en charge<small>le jour même (jour ouvré)</small></span></li>
+          <li><span class="ic var">€</span><span>Évolutions sur devis<small>375 € par jour</small></span></li>
+        </ul>
+        <p class="pour">Budget <b>fixe</b>, connu à l'avance.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Combien par mois, selon le support utilisé ?</h2>
+    <p class="intro">Coût mensuel selon le nombre de demi-journées de support. Au-delà de la demi-journée incluse en formule 2, le support se facture au même tarif dans les deux formules.</p>
+    <div class="graph" role="img" aria-label="Formule 1 : 375 euros sans support, 562,50 euros avec une demi-journée, 750 avec deux, 937,50 avec trois. Formule 2 : 560 euros avec zéro ou une demi-journée, 747,50 avec deux, 935 avec trois.">
+      <div class="barres">
+        <div class="col"><div class="b f1" style="height:40%"><i>375 €</i></div><div class="b f2" style="height:59.7%"><i>560 €</i></div></div>
+        <div class="col"><div class="b f1" style="height:60%"><i>562 €</i></div><div class="b f2" style="height:59.7%"><i>560 €</i></div></div>
+        <div class="col"><div class="b f1" style="height:80%"><i>750 €</i></div><div class="b f2" style="height:79.7%"><i>748 €</i></div></div>
+        <div class="col"><div class="b f1" style="height:100%"><i>938 €</i></div><div class="b f2" style="height:99.7%"><i>935 €</i></div></div>
+      </div>
+      <div class="axes"><div>aucun support</div><div>½ journée</div><div>1 journée</div><div>1 ½ journée</div></div>
+      <div class="legende"><span style="--c:var(--orange)">Formule 1 · socle + régie</span><span style="--c:var(--blue)">Formule 2 · forfait</span></div>
+      <p class="cle">👉 <b>Le point d'équilibre est une demi-journée de support par mois.</b> En dessous, la formule 1 coûte moins cher. Au-dessus, les deux se valent, et la formule 2 apporte un délai de prise en charge plus court.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le socle technique, commun aux deux formules</h2>
+    <p class="intro">Environ une journée par mois. Une partie tourne déjà toute seule ; le reste est fait par Furst Ops, testé sur la recette avant la production.</p>
+    <div class="rythme">
+      <div class="r"><div class="q">Chaque nuit</div><ul><li>Sauvegarde des bases, copie distante gardée 90 jours <span class="auto">auto</span></li><li>Mises à jour de sécurité du système <span class="auto">auto</span></li></ul></div>
+      <div class="r"><div class="q">Chaque semaine</div><ul><li>Santé des sites</li><li>Envois d'e-mails</li><li>Erreurs</li></ul></div>
+      <div class="r"><div class="q">Chaque mois</div><ul><li>Mise à jour des composants (base de données, serveur web, application) et redémarrage planifié</li><li>Test de restauration d'une sauvegarde</li></ul></div>
+      <div class="r"><div class="q">Tous les 6 mois · chaque année</div><ul><li>Revue de sécurité, changement des mots de passe d'exploitation</li><li>Nouvelle version Android exigée par Google (prochaine vers fin août 2027)</li><li>Renouvellement de la clé d'envoi des e-mails</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Qui fait quoi</h2>
+    <div class="qui">
+      <div class="boite fo"><h3>Furst Ops</h3><ul><li>Le socle technique ci-dessus</li><li>Le support de second niveau : incident, compte bloqué, anomalie signalée par l'ADAL</li><li>Les évolutions, sur devis</li></ul></div>
+      <div class="boite adal"><h3>L'ADAL, comme aujourd'hui</h3><ul><li>Le fonctionnement du programme : modération, rôles, demandes RGPD des membres, support de premier niveau (guide et FAQ)</li><li>Les abonnements, réglés directement : hébergement OVH, nom de domaine dmarche.org, compte Google Play, messagerie Microsoft</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Inclus, et en option</h2>
+    <div class="garantie"><b>3 mois</b><span>de garantie après la mise en ligne, dans les deux formules : toute anomalie du code livré est corrigée sans frais (hors demande nouvelle ou changement de règle).</span></div>
+    <p class="intro" style="margin-top:18px">Trois prestations ponctuelles, à retenir ou non :</p>
+    <div class="options">
+      <div class="opt"><h3>Accompagnement de la bascule</h3><p>Les 4 à 6 semaines après la mise en ligne : messages aux membres, pic de connexions et de mots de passe oubliés, suivi renforcé.</p><span class="m">750 à 1 125 €</span></div>
+      <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec un service hébergé en France.</p><span class="m">190 €, puis quelques € / mois</span></div>
+      <div class="opt"><h3>Tableau de bord d'exploitation</h3><p>Une page du back-office qui montre l'état de la plateforme (sauvegardes, santé, échéances) : la maintenance devient visible pour l'ADAL.</p><span class="m">1 125 à 1 500 €</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Conditions</h2>
+    <div class="conds">
+      <div class="c"><b>Taux journalier</b>375 €, le même que pour les chantiers D-cartes et dmarche.org</div>
+      <div class="c"><b>Facturation</b>Mensuelle, à terme échu, avec le détail des interventions</div>
+      <div class="c"><b>Démarrage</b>Au lendemain de la mise en ligne, pour 12 mois renouvelables</div>
+      <div class="c"><b>Révision</b>Un point à 6 mois sur le support consommé, et le choix de formule pour la suite</div>
+    </div>
+    <div class="decide">
+      <h3>À décider ensemble</h3>
+      <ol>
+        <li>La formule retenue pour la première année.</li>
+        <li>Les options : accompagnement de la bascule, surveillance externe, tableau de bord.</li>
+        <li>La date d'expiration de la clé Microsoft d'envoi des e-mails, à relever avec le service informatique de l'ADAL.</li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>Furst Ops — Frédérick Furst · proposition pour l'ADAL, programme D-marche® · novembre 2026</footer>
+</body>
+</html>
