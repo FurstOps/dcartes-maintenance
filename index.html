@@ -89,6 +89,12 @@
   .opt h3{font-size:16px;margin:0 0 4px}
   .opt p{margin:0;font-size:14.5px;color:var(--muted)}
   .opt .m{display:block;margin-top:10px;font-weight:800;color:var(--ink)}
+  .veille{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .veille h3{margin:0 0 12px;font-size:17px}
+  .etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:e}
+  .etape{background:var(--blue-soft);border-radius:12px;padding:12px 14px;font-size:14.5px;position:relative}
+  .etape b{display:block;font-size:13px;color:var(--blue);text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px}
+  .veille .note{margin:12px 0 0;font-size:14.5px;border-left:4px solid var(--orange);padding:4px 0 4px 12px}
   .garantie{margin-top:14px;background:var(--navy);color:#fff;border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:center}
   .garantie b{font-size:28px;color:var(--orange);line-height:1;white-space:nowrap}
 
@@ -105,7 +111,7 @@
     h1{font-size:25px}
     .duo,.qui{grid-template-columns:1fr}
     .rythme,.conds{grid-template-columns:1fr 1fr}
-    .options{grid-template-columns:1fr}
+    .options,.etapes{grid-template-columns:1fr}
     .formule.reco{margin-top:8px}
   }
   @media (max-width:420px){
@@ -200,7 +206,7 @@
     <h2>Qui fait quoi</h2>
     <div class="qui">
       <div class="boite fo"><h3>Furst Ops</h3><ul><li>Le socle technique ci-dessus</li><li>Le support de second niveau : incident, compte bloqué, anomalie signalée par l'ADAL</li><li>Les évolutions, sur devis</li></ul></div>
-      <div class="boite adal"><h3>L'ADAL, comme aujourd'hui</h3><ul><li>Le fonctionnement du programme : modération, rôles, demandes RGPD des membres, support de premier niveau (guide et FAQ)</li><li>Les abonnements, réglés directement : hébergement OVH, nom de domaine dmarche.org, compte Google Play, messagerie Microsoft</li></ul></div>
+      <div class="boite adal"><h3>L'ADAL, comme aujourd'hui</h3><ul><li>Le fonctionnement du programme : modération, rôles, demandes RGPD des membres, support de premier niveau (guide et FAQ)</li><li>Les abonnements, réglés directement : hébergement OVH, nom de domaine dmarche.org, compte Google Play, messagerie Microsoft, et le service de surveillance externe s'il est retenu</li></ul></div>
     </div>
   </section>
 
@@ -210,8 +216,17 @@
     <p class="intro" style="margin-top:18px">Trois prestations ponctuelles, à retenir ou non :</p>
     <div class="options">
       <div class="opt"><h3>Accompagnement de la bascule</h3><p>Les 4 à 6 semaines après la mise en ligne : messages aux membres, pic de connexions et de mots de passe oubliés, suivi renforcé.</p><span class="m">750 à 1 125 €</span></div>
-      <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec un service hébergé en France.</p><span class="m">190 €, puis quelques € / mois</span></div>
+      <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec un service hébergé en France.</p><span class="m">190 € de mise en place, puis quelques € / mois d'abonnement réglés par l'ADAL</span></div>
       <div class="opt"><h3>Tableau de bord d'exploitation</h3><p>Une page du back-office qui montre l'état de la plateforme (sauvegardes, santé, échéances) : la maintenance devient visible pour l'ADAL.</p><span class="m">1 125 à 1 500 €</span></div>
+    </div>
+    <div class="veille">
+      <h3>La surveillance externe, comment ça marche</h3>
+      <div class="etapes">
+        <div class="etape"><b>1 · Toutes les minutes</b>Un service installé hors du serveur de la plateforme vérifie que le site répond. Il ne voit aucune donnée des membres.</div>
+        <div class="etape"><b>2 · Plusieurs échecs de suite</b>Le site ne répond plus : l'alerte part tout de suite, par e-mail ou SMS, vers Furst Ops et l'ADAL si elle le souhaite.</div>
+        <div class="etape"><b>3 · Retour à la normale</b>Un second message annonce que le site répond de nouveau. L'historique des coupures donne le taux de disponibilité du mois.</div>
+      </div>
+      <p class="note"><b>Être prévenu n'est pas intervenir.</b> Sans cette option, une panne de nuit ou de week-end peut rester inaperçue jusqu'au contrôle hebdomadaire. Avec elle, la panne est connue dans la minute, puis prise en charge dans le délai de la formule : sous 1 jour ouvré en formule 1, le jour même (jour ouvré) en formule 2. Ce n'est pas une astreinte 24 h/24.</p>
     </div>
   </section>
 
