@@ -84,7 +84,7 @@
   .boite.fo{border-top:4px solid var(--orange)}
 
   /* Options */
-  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   .opt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
   .opt h3{font-size:16px;margin:0 0 4px}
   .opt p{margin:0;font-size:14.5px;color:var(--muted)}
@@ -213,11 +213,12 @@
   <section>
     <h2>Inclus, et en option</h2>
     <div class="garantie"><b>3 mois</b><span>de garantie après la mise en ligne, dans les deux formules : toute anomalie du code livré est corrigée sans frais (hors demande nouvelle ou changement de règle).</span></div>
-    <p class="intro" style="margin-top:18px">Trois prestations ponctuelles, à retenir ou non :</p>
+    <p class="intro" style="margin-top:18px">Quatre prestations ponctuelles, à retenir ou non :</p>
     <div class="options">
       <div class="opt"><h3>Accompagnement de la bascule</h3><p>Les 4 à 6 semaines après la mise en ligne : messages aux membres, pic de connexions et de mots de passe oubliés, suivi renforcé.</p><span class="m">750 à 1 125 €</span></div>
       <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec UpRadar, un service français hébergé chez OVH en France.</p><span class="m">190 € de mise en place, puis offre gratuite ou Pro (10,80 € TTC / mois), réglée par l'ADAL</span></div>
       <div class="opt"><h3>Tableau de bord d'exploitation</h3><p>Une page du back-office qui montre l'état de la plateforme (sauvegardes, santé, échéances) : la maintenance devient visible pour l'ADAL.</p><span class="m">1 125 à 1 500 €</span></div>
+      <div class="opt"><h3>Plan de reprise après une panne d'OVH</h3><p>La base est sauvegardée en continu (et non plus une fois par nuit) ; un script recrée la plateforme sur un serveur neuf, dans une autre zone d'OVH ; un exercice de reprise tous les 6 mois. Site rétabli en 1 à 2 h, quelques minutes de données perdues au plus, au lieu de 24 h.</p><span class="m">750 à 1 125 €, puis quelques € / mois de stockage OVH</span></div>
     </div>
     <div class="veille">
       <h3>La surveillance externe, comment ça marche</h3>
@@ -228,7 +229,7 @@
       </div>
       <p class="note" style="border-color:#4eadc7"><b>L'abonnement, au choix de l'ADAL</b>, souscrit à son nom : le compte et l'historique lui appartiennent. <b>Gratuit</b> : vérification toutes les 5 minutes, alertes par e-mail, un seul accès. <b>Pro</b> (9 € HT, soit 10,80 € TTC par mois, sans engagement) : vérification toutes les minutes, relance d'une autre personne si l'alerte reste sans réponse, rapport mensuel de disponibilité à présenter en COPIL ; un 2ᵉ accès coûte 3 € HT de plus. Dans les deux cas, les SMS sont en option (8 € HT les 100). La panne étant traitée dans le délai de la formule, l'offre gratuite suffit pour être prévenu ; l'offre Pro sert surtout à mesurer.</p>
       <p class="note"><b>Être prévenu n'est pas intervenir.</b> Sans cette option, une panne de nuit ou de week-end peut rester inaperçue jusqu'au contrôle hebdomadaire. Avec elle, la panne est connue dans les minutes qui suivent, puis prise en charge dans le délai de la formule : sous 1 jour ouvré en formule 1, le jour même (jour ouvré) en formule 2. Ce n'est pas une astreinte 24 h/24.</p>
-      <p class="note"><b>Si la panne vient d'OVH.</b> Une panne de l'hébergeur (machine, réseau, datacenter) ne peut être réparée que par OVH : Furst Ops suit l'incident et tient l'ADAL informée. La plateforme tourne sur un seul serveur, et ses sauvegardes sont aussi chez OVH : une panne longue de l'hébergeur arrêterait le site plusieurs heures, le temps de repartir des sauvegardes sur un serveur neuf. C'est un choix adapté au budget, pas une haute disponibilité.</p>
+      <p class="note"><b>Si la panne vient d'OVH.</b> Une panne de l'hébergeur (machine, réseau, datacenter) ne peut être réparée que par OVH : Furst Ops suit l'incident et tient l'ADAL informée. La plateforme tourne sur un seul serveur, et ses sauvegardes sont aussi chez OVH : une panne longue de l'hébergeur arrêterait le site plusieurs heures, le temps de repartir des sauvegardes sur un serveur neuf. C'est un choix adapté au budget, pas une haute disponibilité. L'option « Plan de reprise » ramène cet arrêt à 1 à 2 heures.</p>
     </div>
   </section>
 
@@ -244,7 +245,7 @@
       <h3>À décider ensemble</h3>
       <ol>
         <li>La formule retenue pour la première année.</li>
-        <li>Les options : accompagnement de la bascule, surveillance externe, tableau de bord.</li>
+        <li>Les options : accompagnement de la bascule, surveillance externe, tableau de bord, plan de reprise.</li>
         <li>La date d'expiration de la clé Microsoft d'envoi des e-mails, à relever avec le service informatique de l'ADAL.</li>
       </ol>
     </div>
