@@ -89,6 +89,12 @@
   .opt h3{font-size:16px;margin:0 0 4px}
   .opt p{margin:0;font-size:14.5px;color:var(--muted)}
   .opt .m{display:block;margin-top:10px;font-weight:800;color:var(--ink)}
+  .prix{margin:10px 0 0;padding:0;list-style:none;font-size:14px;border-top:1px solid var(--line)}
+  .prix li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .prix li span{color:var(--muted)}
+  .prix li b{text-align:right}
+  .prix li.prod b{color:#347485}
+  .legende-prix{font-size:14px;color:var(--muted);margin:8px 0 12px}
   .veille{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
   .veille h3{margin:0 0 12px;font-size:17px}
   .etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:e}
@@ -214,11 +220,12 @@
     <h2>Inclus, et en option</h2>
     <div class="garantie"><b>3 mois</b><span>de garantie après la mise en ligne, dans les deux formules : toute anomalie du code livré est corrigée sans frais (hors demande nouvelle ou changement de règle).</span></div>
     <p class="intro" style="margin-top:18px">Quatre prestations ponctuelles, à retenir ou non :</p>
+    <p class="legende-prix">Chaque option sépare la <b>prestation intellectuelle</b> de Furst Ops (au taux de 375 € / jour, facturée une fois) des <b>frais de production</b> : abonnements et hébergement, payés directement par l'ADAL à leur fournisseur, comme OVH aujourd'hui.</p>
     <div class="options">
-      <div class="opt"><h3>Accompagnement de la bascule</h3><p>Les 4 à 6 semaines après la mise en ligne : messages aux membres, pic de connexions et de mots de passe oubliés, suivi renforcé.</p><span class="m">750 à 1 125 €</span></div>
-      <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec UpRadar, un service français hébergé chez OVH en France.</p><span class="m">190 € de mise en place, puis offre gratuite ou Pro (10,80 € TTC / mois), réglée par l'ADAL</span></div>
-      <div class="opt"><h3>Tableau de bord d'exploitation</h3><p>Une page du back-office qui montre l'état de la plateforme (sauvegardes, santé, échéances) : la maintenance devient visible pour l'ADAL.</p><span class="m">1 125 à 1 500 €</span></div>
-      <div class="opt"><h3>Plan de reprise après une panne d'OVH</h3><p>La base est sauvegardée en continu (et non plus une fois par nuit) ; un script recrée la plateforme sur un serveur neuf, dans une autre zone d'OVH ; un exercice de reprise tous les 6 mois. Site rétabli en 1 à 2 h, quelques minutes de données perdues au plus, au lieu de 24 h.</p><span class="m">750 à 1 125 €, puis quelques € / mois de stockage OVH</span></div>
+      <div class="opt"><h3>Accompagnement de la bascule</h3><p>Les 4 à 6 semaines après la mise en ligne : messages aux membres, pic de connexions et de mots de passe oubliés, suivi renforcé.</p><ul class="prix"><li><span>Prestation intellectuelle · Furst Ops</span><b>750 à 1 125 € (2 à 3 jours)</b></li><li class="prod"><span>Frais de production · réglés par l'ADAL</span><b>aucun</b></li></ul></div>
+      <div class="opt"><h3>Surveillance externe</h3><p>Une alerte si le site ne répond plus, avec UpRadar, un service français hébergé chez OVH en France.</p><ul class="prix"><li><span>Prestation intellectuelle · Furst Ops</span><b>190 € (½ jour)</b></li><li class="prod"><span>Frais de production · réglés par l'ADAL</span><b>UpRadar : gratuit, ou Pro à 10,80 € TTC / mois</b></li></ul></div>
+      <div class="opt"><h3>Tableau de bord d'exploitation</h3><p>Une page du back-office qui montre l'état de la plateforme (sauvegardes, santé, échéances) : la maintenance devient visible pour l'ADAL.</p><ul class="prix"><li><span>Prestation intellectuelle · Furst Ops</span><b>1 125 à 1 500 € (3 à 4 jours)</b></li><li class="prod"><span>Frais de production · réglés par l'ADAL</span><b>aucun</b></li></ul></div>
+      <div class="opt"><h3>Plan de reprise après une panne d'OVH</h3><p>La base est sauvegardée en continu (et non plus une fois par nuit) ; un script recrée la plateforme sur un serveur neuf, dans une autre zone d'OVH ; un exercice de reprise tous les 6 mois. Site rétabli en 1 à 2 h, quelques minutes de données perdues au plus, au lieu de 24 h.</p><ul class="prix"><li><span>Prestation intellectuelle · Furst Ops</span><b>750 à 1 125 € (2 à 3 jours)</b></li><li class="prod"><span>Frais de production · réglés par l'ADAL</span><b>stockage OVH : quelques € / mois ; serveur de reprise facturé seulement pendant une panne ou un exercice</b></li></ul></div>
     </div>
     <div class="veille">
       <h3>La surveillance externe, comment ça marche</h3>
@@ -236,7 +243,7 @@
   <section>
     <h2>Conditions</h2>
     <div class="conds">
-      <div class="c"><b>Taux journalier</b>375 €, le même que pour les chantiers D-cartes et dmarche.org</div>
+      <div class="c"><b>Taux journalier</b>375 €, le même que pour les chantiers D-cartes et dmarche.org. Les formules et les options ne facturent que du travail ; l'hébergement et les abonnements restent payés par l'ADAL</div>
       <div class="c"><b>Facturation</b>Mensuelle, à terme échu, avec le détail des interventions</div>
       <div class="c"><b>Démarrage</b>Au lendemain de la mise en ligne, pour 12 mois renouvelables</div>
       <div class="c"><b>Révision</b>Un point à 6 mois sur le support consommé, et le choix de formule pour la suite</div>
